@@ -1,0 +1,30 @@
+class Solution {
+    public static Node moveToFront(Node head) {
+
+        Node curr, last=null;
+        curr = head;
+        
+        if(curr.next==null)
+        {
+            return curr;
+        }
+        while(curr.next!=null)
+        {
+            if(curr.next.next==null)
+            {
+                last=curr.next;
+                curr.next=null;
+                last.next=head;
+            }
+            else
+            {
+                curr=curr.next;
+            }
+        }
+        
+        return last;
+        
+
+    }
+}
+        
