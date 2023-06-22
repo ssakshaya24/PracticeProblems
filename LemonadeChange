@@ -1,0 +1,44 @@
+class Solution {
+    static boolean lemonadeChange(int N, int bills[]) {
+        
+        int fcount=0,tcount=0,twcount=0;
+        for(int i=0;i<N;i++)
+        {
+            if(bills[i]==5)
+                fcount++;
+                
+            else if(bills[i]==10)
+               {
+                   tcount++;
+                   
+                   if(fcount>0)
+                        fcount--;
+                    else
+                        return false;
+
+               }
+            else
+            {
+                twcount++;
+                
+                if(tcount>0 && fcount>0)
+                {
+                    tcount--;
+                    fcount--;
+                }
+                else if(fcount>=3)
+                {
+                    fcount-=3;
+                }
+                else
+                    return false;
+                
+            }
+            
+            
+                
+        }
+        return true;
+        
+    }
+}
