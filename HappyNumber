@@ -1,0 +1,37 @@
+class Solution{
+
+    static int nextHappy(int N){
+        
+        while(true)
+        {
+            N++;
+            if(NxtHpy(N))
+                return N;
+                
+        }
+    }
+        
+        static boolean NxtHpy(int N)
+        {   
+            
+            int x=0;
+            
+            if(N==1 || N==7) return true;
+            else if(N==2 || N==3 || N==4 || N==5 || N==6 || N==8 || N==9)
+                return false;
+            
+            else
+            {
+                while(N!=0)
+                {
+                    x+=(N%10)*(N%10);
+                    N=N/10;
+                }
+            }
+            return NxtHpy(x);
+        }
+            
+        
+
+    
+}
