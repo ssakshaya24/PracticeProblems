@@ -1,0 +1,29 @@
+class Solution{
+    public void zigZag(int a[], int n){
+        for(int i=1;i<n;i++)
+        {
+            if(i%2==0) //If it is of even index, it should be lesser than its previous odd index element, else swap
+            {
+                if(a[i]>a[i-1])
+                {
+                    int temp = a[i];
+                    a[i] = a[i-1];
+                    a[i-1] = temp;
+                    
+                }
+                
+            }
+            
+            else
+            {
+                if(a[i]<a[i-1]) //If it is of odd index, it should be greater than its previous even index element, else swap
+                {
+                    int temp = a[i];
+                    a[i] = a[i-1];
+                    a[i-1] = temp;
+                }
+            }
+
+        }
+    }
+}
