@@ -1,0 +1,40 @@
+class Solution
+{
+    int getMiddle(Node head)
+    {
+        int len=0,mid=0;
+        Node p = head;
+        if(len==1){
+            return head.data;
+        }
+        
+        while(p!=null)
+        {
+            p=p.next;
+            len++;
+        }
+        
+        
+        if(len%2==0)
+        {
+            mid=(len/2)+1;
+           
+        }
+        else
+        {
+            mid=len/2;
+        }   
+        
+        int c;
+        c=len/2;
+        p=head;
+        while(c!=0)
+        {
+            p=p.next;
+            c--;        
+        }
+        
+        return p.data;
+        
+    }
+}
