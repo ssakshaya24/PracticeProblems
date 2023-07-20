@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        ArrayList<Character>a1 = new  ArrayList<Character>();
+         ArrayList<Character>a2 = new  ArrayList<Character>();
+
+         String s = Integer.toString(x);
+         char ar[] = s.toCharArray();
+         
+         for(int i=0;i<ar.length;i++)
+         {
+             a1.add(ar[i]);
+         }
+
+         for(int j=ar.length-1;j>=0;j--)
+         {
+             a2.add(ar[j]);
+         }
+
+         return a1.equals(a2);
+
+    }
+}
