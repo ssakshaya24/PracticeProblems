@@ -1,0 +1,32 @@
+class Sol
+{
+    int isPossible (String S)
+    {
+        // your code here
+        
+        HashSet<Character> m = new HashSet<Character>();
+        for(int i=0;i<S.length();i++)
+        {
+            if(!(m.contains(S.charAt(i))))
+            {
+                m.add(S.charAt(i));
+                
+            }
+            
+            else
+            {
+                m.remove(S.charAt(i));
+            }
+            
+            
+        }
+        
+        if(m.size()>1)
+        {
+            return 0;
+        }
+        
+        return 1;
+        
+    }
+}
