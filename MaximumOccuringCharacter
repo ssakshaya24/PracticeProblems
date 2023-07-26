@@ -1,0 +1,40 @@
+class Solution
+{
+    //Function to find the maximum occurring character in a string.
+    public static char getMaxOccuringChar(String line)
+    {
+        // Your code here
+        HashMap<Character,Integer> res = new HashMap<Character,Integer>();
+        ArrayList<Character> al = new  ArrayList<Character>();
+        int maxx=0;
+        char c='a';
+        for(int i=0;i<line.length();i++)
+        {
+            if(!res.containsKey(line.charAt(i)))
+            {
+                res.put(line.charAt(i), 1);
+            }
+            else
+            {
+                res.put(line.charAt(i),res.get(line.charAt(i))+1);
+            }
+            
+        }
+        
+        for(Map.Entry<Character,Integer>  h  : res.entrySet())
+        {
+            maxx= Math.max(maxx,h.getValue());
+        }
+        
+        for(Map.Entry<Character,Integer>  h  : res.entrySet())
+        {
+            if(h.getValue()==maxx)
+                al.add(h.getKey());
+        }
+        Collections.sort(al);
+        return al.get(0);
+       
+        
+    }
+    
+}
