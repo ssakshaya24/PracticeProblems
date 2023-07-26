@@ -1,0 +1,13 @@
+class Solution 
+{ 
+    String ReverseSort(String str) 
+    { 
+        // code here
+        char a[] = str.toCharArray();
+        Arrays.sort(a);
+        StringBuilder sb = new StringBuilder(String.copyValueOf(a));
+        sb.reverse();
+        return sb.toString();
+        
+    }
+} 
